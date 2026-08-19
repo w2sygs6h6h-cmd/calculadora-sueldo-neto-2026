@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de sueldo neto España 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEF0E9;
+    --paper-raised: #FBFAF6;
+    --ink: #16233A;
+    --ink-soft: #4A5568;
+    --line: #C9CDBE;
+    --stamp: #8C2F39;
+    --stamp-soft: #F3E4E1;
+    --positive: #205C51;
+    --positive-soft: #E1EDE7;
+    --focus: #16233A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px);
+    background-size: 100% 32px;
+    background-position: 0 120px;
+  }
+  .page {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  header.masthead {
+    padding: 40px 0 24px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  header.masthead .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--stamp);
+    display: block;
+    margin-bottom: 8px;
+  }
+  header.masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header.masthead p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 14px;
+    max-width: 46ch;
+  }
+  .stamp {
+    position: absolute;
+    top: 34px;
+    right: 0;
+    border: 1.5px solid var(--stamp);
+    color: var(--stamp);
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8.5px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    transform: rotate(8deg);
+    text-transform: uppercase;
+    padding: 6px;
+    opacity: 0.85;
+  }
+
+  #app { position: relative; }
+
+  .progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .dot {
+    height: 3px;
+    flex: 1;
+    background: var(--line);
+    border-radius: 2px;
+  }
+  .dot.done { background: var(--ink-soft); }
+  .dot.active { background: var(--ink); }
+
+  .step-panel {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 28px 26px;
+    min-height: 280px;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+  h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
+
+  .field {
+    display: block;
+    margin-bottom: 18px;
+  }
+  .field span {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  select { font-family: 'IBM Plex Sans', sans-serif; }
+  input:focus, select:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+  }
+  .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .checkbox input { width: 16px; height: 16px; }
+
+  .hint {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: -8px;
+  }
+  .warning {
+    background: var(--stamp-soft);
+    color: var(--stamp);
+    border: 1px solid var(--stamp);
+    padding: 12px 14px;
+    font-size: 13px;
+    border-radius: 2px;
+    margin: 12px 0;
+  }
+  .legal-note {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    border-top: 1px dashed var(--line);
+    padding-top: 10px;
+    margin-top: 14px;
+  }
+
+  .subbox {
+    border: 1px dashed var(--line);
+    padding: 14px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .link-btn {
+    background: none;
+    border: none;
+    color: var(--ink);
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    padding: 4px 0;
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 13px 22px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: var(--paper-raised); }
+  .btn.primary:hover { background: #24344f; }
+  .btn.secondary { background: transparent; color: var(--ink); }
+  .btn.secondary:hover { background: rgba(0,0,0,0.04); }
+
+  /* Resultado — tarjeta estilo nómina */
+  .result-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--ink);
+    border-radius: 3px;
+    padding: 26px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .result-card::before {
+    content: "";
+    position: absolute;
+    top: -6px; bottom: -6px; left: -1px;
+    width: 0;
+    border-left: 1px dashed var(--line);
+  }
+  .result-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .result-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 46px;
+    color: var(--positive);
+    margin: 4px 0 18px;
+    font-variant-numeric: tabular-nums;
+  }
+  .mini-table { border-top: 1px solid var(--line); padding-top: 10px; }
+  .mini-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  .mini-row.total {
+    border-top: 1px solid var(--ink);
+    margin-top: 4px;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+  .tabular { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .summary-item {
+    background: var(--paper-raised);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .summary-label { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .summary-value { font-size: 15px; }
+
+  .detail-box {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    padding: 18px;
+    margin-top: 6px;
+  }
+  .detail-box.hidden { display: none; }
+  .detail-box .mini-table.detail .mini-row { font-size: 13px; }
+
+  footer.foot {
+    margin-top: 32px;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .result-value { font-size: 36px; }
+    .stamp { width: 64px; height: 64px; font-size: 7px; top: 24px; }
+    header.masthead h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="kicker">Régimen General · Seguridad Social</span>
+      <h1>Sueldo neto 2026</h1>
+      <p>Calculadora de bruto a neto para trabajadores por cuenta ajena en España, con el algoritmo oficial de retenciones de la AEAT y las cotizaciones de la Orden PJC/297/2026.</p>
+      <div class="stamp">Algoritmo<br/>AEAT 2026<br/>· V1 ·</div>
+    </header>
+    <div id="app"></div>
+    <footer class="foot">
+      No sustituye la nómina emitida por la empresa ni la declaración anual de la renta.
+    </footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
