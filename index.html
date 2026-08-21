@@ -1,0 +1,1617 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de sueldo neto España 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--surface2:#f8fafc;--ink:#172033;--muted:#667085;--line:#e4e7ec;--primary:#155eef;--primary-dark:#0f4fcf;--primary-soft:#eef4ff;--success:#087443;--success-soft:#ecfdf3;--danger:#b42318;--danger-soft:#fef3f2;--radius:16px;--shadow:0 10px 30px rgba(16,24,40,.07)}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;min-height:100vh}
+.page{max-width:760px;margin:0 auto;padding:0 18px 64px}
+header.masthead{padding:34px 0 28px;margin-bottom:22px;position:relative}
+header.masthead:after{content:"";display:block;height:1px;background:var(--line);margin-top:26px}
+header.masthead .kicker{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:var(--primary-soft);color:var(--primary);font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:13px}
+header.masthead h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(34px,6vw,48px);line-height:1.02;margin:0 0 10px;letter-spacing:-.025em;color:#101828}
+header.masthead p{margin:0;color:var(--muted);font-size:15px;line-height:1.55;max-width:62ch}
+.stamp{position:absolute;top:36px;right:0;border:1px solid #b2ccff;color:var(--primary);background:var(--primary-soft);border-radius:12px;width:auto;height:auto;display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;line-height:1.25;letter-spacing:.04em;padding:8px 10px;opacity:1;transform:none;text-transform:uppercase;font-weight:600}
+#app{position:relative}.progress{display:flex;gap:5px;margin:0 0 14px}.dot{height:4px;flex:1;background:#e4e7ec;border-radius:99px}.dot.done{background:#98b9ff}.dot.active{background:var(--primary)}
+.step-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-height:280px;box-shadow:var(--shadow)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:7px}h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:28px;line-height:1.15;margin:0 0 22px;color:#101828}h4{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px}
+.field{display:block;margin-bottom:18px}.field span{display:block;font-size:13px;font-weight:500;color:#344054;margin-bottom:7px}input[type=number],input[type=text],select{width:100%;padding:13px 14px;border:1px solid #d0d5dd;border-radius:10px;background:#fff;font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--ink);transition:border-color .15s,box-shadow .15s}select{font-family:'IBM Plex Sans',sans-serif}input:focus,select:focus{outline:none;border-color:#84adff;box-shadow:0 0 0 4px var(--primary-soft)}
+.checkbox{display:flex;align-items:flex-start;gap:10px;margin-bottom:15px;font-size:14px;line-height:1.4;color:#344054;cursor:pointer}.checkbox input{width:17px;height:17px;margin-top:1px;accent-color:var(--primary)}
+.hint{font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:-8px}.warning{background:var(--danger-soft);color:var(--danger);border:1px solid #fecdca;padding:13px 14px;font-size:13px;line-height:1.45;border-radius:10px;margin:12px 0}.legal-note{font-size:11.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:14px}.subbox{border:1px solid var(--line);background:var(--surface2);padding:15px;border-radius:12px;margin-bottom:14px}
+.link-btn{background:none;border:none;color:var(--primary);font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;padding:6px 0;display:block;margin-bottom:8px;font-family:'IBM Plex Sans',sans-serif}.link-btn:hover{text-decoration:underline}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px}.btn{font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:10px;cursor:pointer;border:1px solid #d0d5dd;transition:.15s}.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 4px 10px rgba(21,94,239,.18)}.btn.primary:hover{background:var(--primary-dark)}.btn.secondary{background:#fff;color:#344054}.btn.secondary:hover{background:var(--surface2)}
+.result-card{background:linear-gradient(145deg,#fff,#f8fbff);border:1px solid #cfe0ff;border-radius:18px;padding:28px;position:relative;margin-bottom:14px;box-shadow:0 14px 36px rgba(21,94,239,.09);overflow:hidden}.result-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--primary)}.result-label{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--primary);text-transform:uppercase}.result-value{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(42px,9vw,60px);line-height:1.05;color:var(--success);margin:7px 0 20px;font-variant-numeric:tabular-nums;letter-spacing:-.025em}.mini-table{border-top:1px solid var(--line);padding-top:10px}.mini-row{display:flex;justify-content:space-between;gap:20px;padding:7px 0;font-size:14px;color:#475467}.mini-row.total{border-top:1px solid #b8c0cc;margin-top:5px;padding-top:10px;font-weight:700;color:#101828}.tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;background:transparent;border:0;margin-bottom:18px}.summary-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px;display:flex;flex-direction:column;gap:5px}.summary-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.summary-value{font-size:14px;font-weight:600}.detail-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:6px}.detail-box.hidden{display:none}.detail-box .mini-table.detail .mini-row{font-size:13px}
+footer.foot{margin-top:28px;font-size:11px;line-height:1.5;color:var(--muted);text-align:center}
+@media(max-width:560px){.page{padding:0 14px 48px}header.masthead{padding-top:24px}.stamp{position:static;display:inline-block;margin-top:14px}.step-panel{padding:22px 18px}.result-card{padding:24px 20px}.summary-grid{grid-template-columns:1fr 1fr}.nav .btn{padding:11px 15px}}
+@media(max-width:380px){.summary-grid{grid-template-columns:1fr}.result-value{font-size:40px}}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="kicker">Calculadora salarial · España</span>
+      <h1>Calcula tu sueldo neto 2026</h1>
+      <p>Introduce tu salario bruto, tus pagas y tu situación personal. Obtén una estimación clara de lo que cobrarás realmente en nómina.</p>
+      <div class="stamp">AEAT<br/>2026<br/>VERIFICADA</div>
+    </header>
+    <div id="app"></div>
+    <footer class="foot">
+      No sustituye la nómina emitida por la empresa ni la declaración anual de la renta.
+    </footer>
+  </div>
+  <script>
+const ssParams = {
+  "year": 2026,
+  "source": "Orden PJC/297/2026, de 30 de marzo (BOE-A-2026-7296)",
+  "sourceUrl": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+  "params": {
+    "topeMaximoMensual": {
+      "name": "tope_maximo_cotizacion_mensual",
+      "value": 5101.2,
+      "unit": "EUR/mes",
+      "effectiveFrom": "2026-01-01",
+      "source": "Orden PJC/297/2026",
+      "article": "Art. 2",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+      "verified": true
+    },
+    "topeMinimoContingenciasProfesionales": {
+      "name": "tope_minimo_contingencias_profesionales",
+      "value": 1424.4,
+      "unit": "EUR/mes",
+      "effectiveFrom": "2026-01-01",
+      "source": "Orden PJC/297/2026",
+      "article": "Art. 2",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+      "verified": true
+    },
+    "basesMinimasMensualesPorGrupo": {
+      "1": {
+        "value": 1989.3,
+        "unit": "EUR/mes"
+      },
+      "2": {
+        "value": 1649.7,
+        "unit": "EUR/mes"
+      },
+      "3": {
+        "value": 1435.2,
+        "unit": "EUR/mes"
+      },
+      "4": {
+        "value": 1424.4,
+        "unit": "EUR/mes"
+      },
+      "5": {
+        "value": 1424.4,
+        "unit": "EUR/mes"
+      },
+      "6": {
+        "value": 1424.4,
+        "unit": "EUR/mes"
+      },
+      "7": {
+        "value": 1424.4,
+        "unit": "EUR/mes"
+      },
+      "_meta": {
+        "name": "bases_minimas_mensuales_grupos_1_7",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 3",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+        "verified": true
+      }
+    },
+    "basesDiariasGrupos8a11": {
+      "minimaDia": {
+        "name": "base_minima_diaria_grupos_8_11",
+        "value": 47.48,
+        "unit": "EUR/dia",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 3",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+        "verified": true
+      },
+      "maximaDia": {
+        "name": "base_maxima_diaria_grupos_8_11",
+        "value": 170.04,
+        "unit": "EUR/dia",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 3",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+        "verified": true
+      }
+    },
+    "basesMinimasHorariasParcial": {
+      "1": {
+        "value": 11.98,
+        "unit": "EUR/hora"
+      },
+      "2": {
+        "value": 9.94,
+        "unit": "EUR/hora"
+      },
+      "3": {
+        "value": 8.65,
+        "unit": "EUR/hora"
+      },
+      "4a11": {
+        "value": 8.58,
+        "unit": "EUR/hora"
+      },
+      "_meta": {
+        "name": "bases_minimas_horarias_jornada_parcial",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 3",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+        "verified": true
+      }
+    },
+    "tiposTrabajador": {
+      "contingenciasComunes": {
+        "name": "tipo_contingencias_comunes_trabajador",
+        "value": 0.047,
+        "unit": "rate",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 4.a",
+        "verified": true
+      },
+      "mei": {
+        "name": "tipo_mei_trabajador",
+        "value": 0.0015,
+        "unit": "rate",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 4.b",
+        "verified": true
+      },
+      "desempleoIndefinido": {
+        "name": "tipo_desempleo_trabajador_indefinido",
+        "value": 0.0155,
+        "unit": "rate",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 4.c",
+        "verified": true
+      },
+      "desempleoTemporal": {
+        "name": "tipo_desempleo_trabajador_temporal",
+        "value": 0.016,
+        "unit": "rate",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 4.c",
+        "verified": true
+      },
+      "formacionProfesional": {
+        "name": "tipo_formacion_profesional_trabajador",
+        "value": 0.001,
+        "unit": "rate",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 4.d",
+        "verified": true
+      }
+    },
+    "solidaridad": {
+      "topeAplicacion": 5101.2,
+      "tramos": [
+        {
+          "desde": 5101.21,
+          "hasta": 5611.32,
+          "tipoTotal": 0.0115,
+          "tipoTrabajador": 0.0019,
+          "name": "solidaridad_tramo_1",
+          "source": "Orden PJC/297/2026",
+          "article": "Disposición adicional - cotización adicional de solidaridad",
+          "verified": true
+        },
+        {
+          "desde": 5611.33,
+          "hasta": 7651.8,
+          "tipoTotal": 0.0125,
+          "tipoTrabajador": 0.0021,
+          "name": "solidaridad_tramo_2",
+          "source": "Orden PJC/297/2026",
+          "article": "Disposición adicional - cotización adicional de solidaridad",
+          "verified": true
+        },
+        {
+          "desde": 7651.81,
+          "hasta": null,
+          "tipoTotal": 0.0146,
+          "tipoTrabajador": 0.0024,
+          "name": "solidaridad_tramo_3",
+          "source": "Orden PJC/297/2026",
+          "article": "Disposición adicional - cotización adicional de solidaridad",
+          "verified": true
+        }
+      ]
+    },
+    "contratosInferiores30Dias": {
+      "cotizacionAdicionalEmpresa": {
+        "name": "cotizacion_adicional_contratos_inferiores_30_dias",
+        "value": 33.62,
+        "unit": "EUR",
+        "aCargoDe": "empresa",
+        "effectiveFrom": "2026-01-01",
+        "source": "Orden PJC/297/2026",
+        "article": "Art. 26 LGSS / disposición correspondiente",
+        "verified": true,
+        "nota": "No se descuenta del salario neto del trabajador."
+      }
+    }
+  }
+};
+
+const irpfParams = {
+  "minimoPersonal": {
+    "general": {
+      "name": "minimo_personal_general",
+      "value": 5550,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "incremento65": {
+      "name": "minimo_personal_incremento_65",
+      "value": 1150,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "incremento75": {
+      "name": "minimo_personal_incremento_75",
+      "value": 1400,
+      "unit": "EUR/año",
+      "verified": true
+    }
+  },
+  "minimosDescendientes": {
+    "primero": {
+      "name": "minimo_1er_descendiente",
+      "value": 2400,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "segundo": {
+      "name": "minimo_2o_descendiente",
+      "value": 2700,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "tercero": {
+      "name": "minimo_3er_descendiente",
+      "value": 4000,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "cuartoYSiguientes": {
+      "name": "minimo_4o_y_siguientes_descendientes",
+      "value": 4500,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "menorDe3Anos": {
+      "name": "incremento_descendiente_menor_3_anos",
+      "value": 2800,
+      "unit": "EUR/año",
+      "verified": true
+    }
+  },
+  "minimosAscendientes": {
+    "mayor65": {
+      "name": "minimo_ascendiente_65",
+      "value": 1150,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "incremento75": {
+      "name": "minimo_ascendiente_incremento_75",
+      "value": 1400,
+      "unit": "EUR/año",
+      "verified": true
+    }
+  },
+  "discapacidad": {
+    "contribuyente33a65": {
+      "name": "min_discapacidad_contribuyente_33_65",
+      "value": 3000,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "contribuyenteMayor65": {
+      "name": "min_discapacidad_contribuyente_65",
+      "value": 9000,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "incrementoMovilidad": {
+      "name": "incremento_asistencia_movilidad_reducida",
+      "value": 3000,
+      "unit": "EUR/año",
+      "verified": true
+    }
+  },
+  "gastosDeducibles": {
+    "general": {
+      "name": "gasto_deducible_general",
+      "value": 2000,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "movilidadGeografica": {
+      "name": "gasto_deducible_movilidad_geografica",
+      "value": 2000,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "trabajadorActivoDiscapacidad33a65": {
+      "name": "gasto_deducible_discapacidad_33_65",
+      "value": 3500,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "trabajadorActivoDiscapacidad65OMas": {
+      "name": "gasto_deducible_discapacidad_65_o_movilidad",
+      "value": 7750,
+      "unit": "EUR/año",
+      "verified": true
+    }
+  },
+  "reduccionRendimientoTrabajo": {
+    "tramo1": {
+      "limiteRNT": 14852,
+      "reduccion": 7302
+    },
+    "tramo2": {
+      "limiteRNTdesde": 14852,
+      "limiteRNThasta": 17673.52,
+      "base": 7302,
+      "coeficiente": 1.75
+    },
+    "tramo3": {
+      "limiteRNTdesde": 17673.52,
+      "limiteRNThasta": 19747.5,
+      "base": 2364.34,
+      "coeficiente": 1.14
+    },
+    "tramo4": {
+      "limiteRNTdesde": 19747.5,
+      "reduccion": 0
+    }
+  },
+  "reduccionesEspeciales": {
+    "pensionista": {
+      "name": "reduccion_pensionista",
+      "value": 600,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "masDeDosDescendientes": {
+      "name": "reduccion_mas_2_descendientes",
+      "value": 600,
+      "unit": "EUR/año",
+      "verified": true
+    },
+    "desempleado": {
+      "name": "reduccion_desempleado",
+      "value": 1200,
+      "unit": "EUR/año",
+      "verified": true
+    }
+  },
+  "limitesExcluyentesRetencion": {
+    "situacion1": {
+      "0": null,
+      "1": 17644,
+      "2": 18694
+    },
+    "situacion2": {
+      "0": 17197,
+      "1": 18130,
+      "2": 19262
+    },
+    "situacion3": {
+      "0": 15876,
+      "1": 16342,
+      "2": 16867
+    }
+  },
+  "limite43PorCiento": {
+    "name": "limite_incremento_retencion_43_por_cien",
+    "coeficiente": 0.43,
+    "descripcion": "Cuando la retribución supera el límite excluyente de retención, la cuota de retención no puede minorar el líquido a percibir en más del 43% del exceso sobre dicho límite.",
+    "verified": true
+  },
+  "escalaRetencion": [
+    {
+      "hasta": 12450,
+      "desde": 0,
+      "cuotaAcumulada": 0,
+      "tipo": 0.19
+    },
+    {
+      "hasta": 20200,
+      "desde": 12450,
+      "cuotaAcumulada": 2365.5,
+      "tipo": 0.24
+    },
+    {
+      "hasta": 35200,
+      "desde": 20200,
+      "cuotaAcumulada": 4225.5,
+      "tipo": 0.3
+    },
+    {
+      "hasta": 60000,
+      "desde": 35200,
+      "cuotaAcumulada": 8725.5,
+      "tipo": 0.37
+    },
+    {
+      "hasta": 300000,
+      "desde": 60000,
+      "cuotaAcumulada": 17901.5,
+      "tipo": 0.45
+    },
+    {
+      "hasta": null,
+      "desde": 300000,
+      "cuotaAcumulada": 125901.5,
+      "tipo": 0.47
+    }
+  ],
+  "tipoMaximo": 0.47,
+  "viviendaHabitual": {
+    "umbralRetribucion": 33007.2,
+    "reduccionPuntos": 2.0,
+    "descripcion": "Reducción de 2 puntos del tipo de retención por pagos destinados a adquisición/rehabilitación de vivienda habitual con financiación ajena, cuando proceda.",
+    "source": "Reglamento IRPF art. 86.1 / disposición transitoria decimoctava LIRPF",
+    "sourceUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+    "verified": true
+  }
+};
+
+const smiParams = {
+  "year": 2026,
+  "source": "Real Decreto 126/2026, de 18 de febrero (BOE-A-2026-3815)",
+  "sourceUrl": "https://www.boe.es",
+  "params": {
+    "smiAnual14Pagas": {
+      "name": "smi_anual_14_pagas",
+      "value": 17094,
+      "unit": "EUR/año",
+      "effectiveFrom": "2026-01-01",
+      "source": "Real Decreto 126/2026",
+      "verified": true
+    }
+  }
+};
+
+
+/**
+ * Motor de redondeos conforme al algoritmo AEAT.
+ *
+ * REDONDEAR1: redondeo aritmético a 2 decimales (si el tercer decimal es 5,
+ * redondea hacia arriba). Se usa para todos los IMPORTES monetarios.
+ *
+ * TRUNCAR: truncamiento (no redondeo) a 2 decimales. Se usa EXCLUSIVAMENTE
+ * para el TIPO DE RETENCIÓN (porcentaje), nunca para importes en euros.
+ *
+ * Ejemplo (sección 25 del encargo):
+ *   17.85964523 %  ->  TRUNCAR  ->  17.85 %   (NO 17.86 %)
+ */
+
+// Pequeño margen para neutralizar el error de representación binaria de
+// coma flotante (p. ej. 1.005 se representa internamente como
+// 1.00499999999999989...), sin alterar el resultado de casos normales.
+const EPS = 1e-9;
+
+/**
+ * Redondeo aritmético estándar a `decimals` decimales, con desempate hacia
+ * arriba en el .5 exacto.
+ * @param {number} value
+ * @param {number} [decimals=2]
+ * @returns {number}
+ */
+function roundAEAT(value, decimals = 2) {
+  if (!Number.isFinite(value)) return value;
+  const factor = 10 ** decimals;
+  const scaled = value * factor;
+  const sign = scaled < 0 ? -1 : 1;
+  const rounded = Math.floor(Math.abs(scaled) + 0.5 + EPS) * sign;
+  return rounded / factor;
+}
+
+/**
+ * Truncamiento (parte entera hacia cero) a `decimals` decimales.
+ * @param {number} value
+ * @param {number} [decimals=2]
+ * @returns {number}
+ */
+function truncateAEAT(value, decimals = 2) {
+  if (!Number.isFinite(value)) return value;
+  const factor = 10 ** decimals;
+  const scaled = value * factor;
+  const sign = scaled < 0 ? -1 : 1;
+  const truncated = Math.floor(Math.abs(scaled) + EPS) * sign;
+  return truncated / factor;
+}
+
+
+
+/**
+ * Determina la base mínima legal mensual de cotización según grupo y jornada.
+ *
+ * - Grupos 1-7: base mínima mensual fija (data/2026/social-security.json).
+ * - Grupos 8-11: base mínima diaria x 30 días (mes "tipo" de cotización).
+ * - Jornada parcial (cualquier grupo): base mínima = horas trabajadas x base
+ *   mínima horaria del grupo (Art. 3 Orden PJC/297/2026).
+ */
+function baseMinimaLegalMensual(input, ssParams) {
+  const { jornada, grupoCotizacion, horasMensuales } = input;
+
+  if (jornada === 'parcial') {
+    const horaria = basesHorarias(ssParams)[grupoCotizacion] ?? ssParams.params.basesMinimasHorariasParcial['4a11'].value;
+    return roundAEAT(horaria * horasMensuales);
+  }
+
+  if (grupoCotizacion >= 8 && grupoCotizacion <= 11) {
+    const diaria = ssParams.params.basesDiariasGrupos8a11.minimaDia.value;
+    const DIAS_MES_TIPO = 30;
+    return roundAEAT(diaria * DIAS_MES_TIPO);
+  }
+
+  const grupo = ssParams.params.basesMinimasMensualesPorGrupo[String(grupoCotizacion)];
+  if (!grupo) {
+    throw new Error(`Grupo de cotización no soportado en V1: ${grupoCotizacion}`);
+  }
+  return grupo.value;
+}
+
+function basesHorarias(ssParams) {
+  const h = ssParams.params.basesMinimasHorariasParcial;
+  return {
+    1: h['1'].value,
+    2: h['2'].value,
+    3: h['3'].value,
+    4: h['4a11'].value,
+    5: h['4a11'].value,
+    6: h['4a11'].value,
+    7: h['4a11'].value,
+    8: h['4a11'].value,
+    9: h['4a11'].value,
+    10: h['4a11'].value,
+    11: h['4a11'].value
+  };
+}
+
+/**
+ * Calcula la cotización adicional de solidaridad de forma PROGRESIVA sobre
+ * la remuneración mensual que excede el tope máximo de cotización.
+ * NUNCA aplica el tipo de un tramo a la totalidad del salario.
+ */
+function calcularSolidaridad(remuneracionMensual, ssParams) {
+  const { tramos, topeAplicacion } = ssParams.params.solidaridad;
+  const desglose = [];
+  let totalTrabajador = 0;
+
+  if (remuneracionMensual <= topeAplicacion) {
+    return { aplica: false, desglose: [], totalTrabajador: 0 };
+  }
+
+  for (const tramo of tramos) {
+    if (remuneracionMensual < tramo.desde) continue;
+    // El tramo empieza justo donde termina el tope general / tramo anterior.
+    const inicioTramo = tramo.desde - 0.01;
+    const techoTramo = tramo.hasta === null ? remuneracionMensual : tramo.hasta;
+    const porcionEnTramo = Math.max(0, Math.min(remuneracionMensual, techoTramo) - inicioTramo);
+    if (porcionEnTramo <= 0) continue;
+
+    const importeTrabajador = roundAEAT(porcionEnTramo * tramo.tipoTrabajador);
+    desglose.push({
+      tramo: tramo.name,
+      desde: tramo.desde,
+      hasta: tramo.hasta,
+      porcionEnTramo: roundAEAT(porcionEnTramo),
+      tipoTrabajador: tramo.tipoTrabajador,
+    });
+
+    totalTrabajador += importeTrabajador;
+  }
+
+  return { aplica: true, desglose, totalTrabajador: roundAEAT(totalTrabajador) };
+}
+
+/**
+ * Motor de Seguridad Social del trabajador (Régimen General, 2026).
+ *
+ * @param {object} input
+ * @param {number} input.brutoAnual - retribución anual computable total
+ * @param {'completa'|'parcial'} input.jornada
+ * @param {number} input.grupoCotizacion - 1 a 11
+ * @param {number} [input.horasMensuales] - obligatorio si jornada = 'parcial'
+ * @param {'indefinido'|'temporal'} input.tipoContrato
+ * @param {object} ssParams - data/2026/social-security.json
+ * @returns {object} desglose completo de la cotización del trabajador
+ */
+function calculateSocialSecurity(input, ssParams) {
+  const { brutoAnual, jornada, tipoContrato } = input;
+
+  if (jornada === 'parcial' && (!input.horasMensuales || input.horasMensuales <= 0)) {
+    throw new Error('Las horas trabajadas son obligatorias para jornada parcial.');
+  }
+
+  const remuneracionMensual = roundAEAT(brutoAnual / 12);
+  const topeMaximo = ssParams.params.topeMaximoMensual.value;
+
+  const minimaLegal = baseMinimaLegalMensual(input, ssParams);
+  let baseCotizacion = Math.max(remuneracionMensual, minimaLegal);
+  baseCotizacion = Math.min(baseCotizacion, topeMaximo);
+  baseCotizacion = roundAEAT(baseCotizacion);
+
+  const tipos = ssParams.params.tiposTrabajador;
+  const tipoDesempleo = tipoContrato === 'temporal' ? tipos.desempleoTemporal.value : tipos.desempleoIndefinido.value;
+
+  const contingenciasComunes = roundAEAT(baseCotizacion * tipos.contingenciasComunes.value);
+  const mei = roundAEAT(baseCotizacion * tipos.mei.value);
+  const desempleo = roundAEAT(baseCotizacion * tipoDesempleo);
+  const formacionProfesional = roundAEAT(baseCotizacion * tipos.formacionProfesional.value);
+
+  const solidaridad = calcularSolidaridad(remuneracionMensual, ssParams);
+
+  const totalMensual = roundAEAT(
+    contingenciasComunes + mei + desempleo + formacionProfesional + solidaridad.totalTrabajador
+  );
+
+  return {
+    baseCotizacionMensual: baseCotizacion,
+    remuneracionMensual,
+    baseMinimaLegalAplicada: minimaLegal,
+    topeMaximoAplicado: baseCotizacion === topeMaximo,
+    desglose: {
+      contingenciasComunes,
+      mei,
+      desempleo: { importe: desempleo, tipo: tipoDesempleo, tipoContrato },
+      formacionProfesional,
+      solidaridad
+    },
+    totalMensual,
+    totalAnual: roundAEAT(totalMensual * 12)
+  };
+}
+
+
+
+/** Edad a 31/12 del ejercicio, según año de nacimiento (aproximación estándar del algoritmo). */
+function edadFinAno(anoNacimiento, anioEjercicio) {
+  return anioEjercicio - anoNacimiento;
+}
+
+/**
+ * Reducción por obtención de rendimientos del trabajo, según tramos del RNT.
+ * Sección 17 del encargo / algoritmo AEAT 2026.
+ */
+function reduccionRendimientoTrabajo(rnt, params) {
+  const t = params.reduccionRendimientoTrabajo;
+  if (rnt <= t.tramo1.limiteRNT) return t.tramo1.reduccion;
+  if (rnt <= t.tramo2.limiteRNThasta) {
+    return roundAEAT(t.tramo2.base - t.tramo2.coeficiente * (rnt - t.tramo2.limiteRNTdesde));
+  }
+  if (rnt < t.tramo3.limiteRNThasta) {
+    return Math.max(0, roundAEAT(t.tramo3.base - t.tramo3.coeficiente * (rnt - t.tramo3.limiteRNTdesde)));
+  }
+  return 0;
+}
+
+/** Gastos deducibles distintos de la cotización a la Seguridad Social. */
+function gastosDeduciblesOtros(input, params) {
+  const g = params.gastosDeducibles;
+  let total = g.general.value;
+  if (input.movilidadGeografica) total += g.movilidadGeografica.value;
+  if (input.situacionLaboral === 'activo' && input.discapacidadContribuyente) {
+    total += input.discapacidadContribuyente === '65+'
+      ? g.trabajadorActivoDiscapacidad65OMas.value
+      : g.trabajadorActivoDiscapacidad33a65.value;
+  }
+  return total;
+}
+
+/** Reducciones especiales (sección 18). */
+function reduccionesEspeciales(input, params, anioEjercicio) {
+  const r = params.reduccionesEspeciales;
+  let total = 0;
+  const detalle = {};
+  if (input.situacionLaboral === 'pensionista') { total += r.pensionista.value; detalle.pensionista = r.pensionista.value; }
+  if (descendientesElegibles(input.descendientes, anioEjercicio).length > 2) { total += r.masDeDosDescendientes.value; detalle.masDe2Descendientes = r.masDeDosDescendientes.value; }
+  if (input.situacionLaboral === 'desempleado') { total += r.desempleado.value; detalle.desempleado = r.desempleado.value; }
+  return { total, detalle };
+}
+
+/** Mínimo personal (sección 12), incrementos por edad acumulativos. */
+function minimoPersonal(input, params, anioEjercicio) {
+  const mp = params.minimoPersonal;
+  const edad = edadFinAno(input.anoNacimiento, anioEjercicio);
+  let total = mp.general.value;
+  if (edad >= 65) total += mp.incremento65.value;
+  if (edad >= 75) total += mp.incremento75.value;
+  return roundAEAT(total);
+}
+
+/** Mínimo por discapacidad del contribuyente (sección 15). */
+function minimoDiscapacidadContribuyente(input, params) {
+  if (!input.discapacidadContribuyente) return 0;
+  const d = params.discapacidad;
+  let total = input.discapacidadContribuyente === '65+' ? d.contribuyenteMayor65.value : d.contribuyente33a65.value;
+  if (input.movilidadReducidaContribuyente) total += d.incrementoMovilidad.value;
+  return total;
+}
+
+/** Mínimo por descendientes (sección 13), con orden, cómputo entero/mitad e incremento <3 años. */
+function minimoDescendientes(descendientes, params, anioEjercicio) {
+  const md = params.minimosDescendientes;
+  const d = params.discapacidad;
+  const elegibles = descendientesElegibles(descendientes, anioEjercicio);
+  const importesPorOrden = [md.primero.value, md.segundo.value, md.tercero.value];
+  let total = 0;
+  const detalle = [];
+  elegibles.forEach((desc, idx) => {
+    const orden = idx + 1;
+    const importeBase = orden <= 3 ? importesPorOrden[orden - 1] : md.cuartoYSiguientes.value;
+    const factor = desc.computo === 'mitad' ? 0.5 : 1;
+    let importe = importeBase;
+    const edad = edadFinAno(desc.anoNacimiento, anioEjercicio);
+    if (edad < 3 || desc.altaPorAdopcionOAcogimiento) importe += md.menorDe3Anos.value;
+    if (desc.discapacidad) {
+
+      if (desc.movilidadReducida) importe += d.incrementoMovilidad.value;
+    }
+
+    total += importe;
+    detalle.push({ orden, importe, factor });
+  });
+  return { total: roundAEAT(total), detalle };
+}
+
+/** Mínimo por ascendientes (sección 14). */
+function minimoAscendientes(ascendientes, params) {
+  const ma = params.minimosAscendientes;
+  const d = params.discapacidad;
+  let total = 0;
+  const detalle = [];
+  (ascendientes ?? []).forEach((asc) => {
+    if (!asc.conviven) return;
+    const edad = asc.edad ?? null;
+    if (edad === null || edad < 65) return;
+    let importe = ma.mayor65.value;
+    if (edad >= 75) importe += ma.incremento75.value;
+    if (asc.discapacidad) {
+
+      if (asc.movilidadReducida) importe += d.incrementoMovilidad.value;
+    }
+    const divisor = asc.personasConDerecho && asc.personasConDerecho > 1 ? asc.personasConDerecho : 1;
+
+    total += importe;
+    detalle.push({ importe, divisor });
+  });
+  return { total: roundAEAT(total), detalle };
+}
+
+/** Aplica la escala estatal de retención (sección 20) a una base dada. Devuelve la cuota. */
+function aplicarEscala(base, escala) {
+  if (base <= 0) return 0;
+  for (const t of escala) {
+    if (t.hasta === null || base <= t.hasta) {
+      const exceso = base - t.desde;
+      return roundAEAT(t.cuotaAcumulada + exceso * t.tipo);
+    }
+  }
+  const ultimo = escala[escala.length - 1];
+  return roundAEAT(ultimo.cuotaAcumulada + (base - ultimo.desde) * ultimo.tipo);
+}
+
+/** Determina la categoría de nº de descendientes para la tabla de límites excluyentes (0, 1, 2+). */
+function descendienteElegible(desc, anioEjercicio) {
+  const edad = edadFinAno(desc.anoNacimiento, anioEjercicio);
+  const tieneDiscapacidad = !!desc.discapacidad;
+  const edadValida = edad < 25 || tieneDiscapacidad;
+  const rentasValidas = (desc.rentasAnuales ?? 0) <= 8000;
+  const declaracionValida = !desc.declaraIRPFMas1800;
+  return edadValida && rentasValidas && declaracionValida;
+}
+
+function descendientesElegibles(descendientes, anioEjercicio) {
+  return (descendientes ?? []).filter(d => descendienteElegible(d, anioEjercicio));
+}
+
+function categoriaDescendientes(descendientes, anioEjercicio) {
+  const n = descendientesElegibles(descendientes, anioEjercicio).length;
+  if (n >= 2) return '2';
+  return String(n);
+}
+
+/**
+ * Motor de IRPF (retención en nómina). Implementa la secuencia:
+ * RT -> gastos deducibles -> RNT -> reducción trabajo -> reducciones
+ * especiales -> RNRT -> (pensión compensatoria / anualidades) -> base para
+ * calcular el tipo -> mínimo personal y familiar -> cuota de retención ->
+ * límites -> tipo de retención (truncado) -> importe anual.
+ *
+ * @param {object} input
+ * @param {number} ssTrabajadorAnual - cotización SS anual del trabajador (motor de Seguridad Social)
+ * @param {object} irpfParams - data/2026/irpf.json .params
+ * @param {number} [anioEjercicio=2026]
+ */
+function calculateIrpf(input, ssTrabajadorAnual, irpfParams, anioEjercicio = 2026) {
+  const RT = input.retribucionAnual;
+
+  if (input.situacionFamiliar === 2 && (input.conyugeRentasAnuales ?? 0) > 1500) {
+    throw new Error('La situación familiar 2 solo procede cuando el cónyuge no obtiene rentas anuales superiores a 1.500 €.');
+  }
+
+  // 1-3: Rendimiento neto del trabajo (RNT)
+  // IMPORTANTE: la AEAT calcula RNT restando cotizaciones (y, si procede,
+  // rendimientos irregulares), pero NO los otros gastos de 2.000 € todavía.
+  // Esos otros gastos se restan después de calcular RED20.
+  const gastosSS = roundAEAT(ssTrabajadorAnual);
+  const otrosGastosBrutos = gastosDeduciblesOtros(input, irpfParams);
+  const RNT = Math.max(0, roundAEAT(RT - gastosSS));
+  // La AEAT limita OTROSGASTOS a RETRIB - COTIZACIONES.
+  const otrosGastosDeducibles = Math.max(0, Math.min(otrosGastosBrutos, RNT));
+
+  // 4: Reducción por obtención de rendimientos del trabajo
+  const reduccionTrabajo = reduccionRendimientoTrabajo(RNT, irpfParams);
+
+  // 5: Rendimiento neto reducido del trabajo (RNTRDU)
+  // Secuencia exacta del algoritmo AEAT: RNT - OTROSGASTOS - RED20.
+  const RNRT = Math.max(0, roundAEAT(RNT - otrosGastosDeducibles - reduccionTrabajo));
+
+  // 6: Reducciones especiales (pensión, >2 descendientes, desempleo) se
+  // aplican posteriormente al construir BASE.
+  const especiales = reduccionesEspeciales(input, irpfParams, anioEjercicio);
+
+  // 7: Reducciones que forman parte de BASE. Las anualidades por alimentos
+  // NO se restan aquí: el algoritmo las separa después en CUOTA1.
+  const pensionCompensatoria = input.pensionCompensatoria ?? 0;
+  const anualidadesAlimentos = input.anualidadesPorAlimentos ?? 0;
+  const baseParaTarifa = Math.max(0, roundAEAT(
+    RNRT - pensionCompensatoria - especiales.total
+  ));
+
+  // 8: Mínimo personal y familiar (MPF)
+  const minPersonal = minimoPersonal(input, irpfParams, anioEjercicio);
+  const minDiscapacidadContrib = minimoDiscapacidadContribuyente(input, irpfParams);
+  const minDescendientes = minimoDescendientes(input.descendientes, irpfParams, anioEjercicio);
+  const minAscendientes = minimoAscendientes(input.ascendientes, irpfParams);
+  const MPF = roundAEAT(minPersonal + minDiscapacidadContrib + minDescendientes.total + minAscendientes.total);
+
+  // 9: Cuota de retención según la secuencia AEAT 2026.
+  // Con anualidades: BASE se divide en BASE1=BASE-ANUALIDADES y
+  // BASE2=ANUALIDADES, siempre que BASE-ANUALIDADES > 0.
+  const escala = irpfParams.escalaRetencion;
+  const hayAnualidadesSeparables = anualidadesAlimentos > 0 && (baseParaTarifa - anualidadesAlimentos) > 0;
+  const cuota1 = hayAnualidadesSeparables
+    ? roundAEAT(aplicarEscala(baseParaTarifa - anualidadesAlimentos, escala) + aplicarEscala(anualidadesAlimentos, escala))
+    : aplicarEscala(baseParaTarifa, escala);
+  const cuota2 = aplicarEscala(
+    MPF + (hayAnualidadesSeparables ? 1980 : 0),
+    escala
+  );
+  let cuota = cuota1 > cuota2 ? roundAEAT(cuota1 - cuota2) : 0;
+
+  // 10: Límite excluyente y regla del 43 %. El 43 % solo existe cuando
+  // RETRIB <= 35.200 €, y el umbral incorpora pensión compensatoria y
+  // desempleo tal como exige el algoritmo AEAT.
+  const limites = irpfParams.limitesExcluyentesRetencion[`situacion${input.situacionFamiliar}`];
+  const categoria = categoriaDescendientes(input.descendientes, anioEjercicio);
+  const umbralBase = limites ? limites[categoria] : null;
+  const pensionParaLimite = pensionCompensatoria;
+  const desemParaLimite = input.situacionLaboral === 'desempleado' ? 1200 : 0;
+  const umbral = umbralBase === null || umbralBase === undefined
+    ? null
+    : umbralBase + pensionParaLimite + desemParaLimite;
+
+  let cuotaFinal = cuota;
+  let motivoExencion = null;
+
+  if (umbral !== null && RT <= umbral) {
+    cuotaFinal = 0;
+    motivoExencion = 'RT no supera el límite excluyente de retención para su situación familiar y nº de descendientes.';
+  } else if (RT <= 35200) {
+    let limite43 = null;
+    const n = (input.descendientes ?? []).length;
+    if (input.situacionFamiliar === 1) {
+      if (n === 1) limite43 = (RT - (17644 + pensionParaLimite + desemParaLimite)) * 0.43;
+      else if (n > 1) limite43 = (RT - (18694 + pensionParaLimite + desemParaLimite)) * 0.43;
+    } else if (input.situacionFamiliar === 2) {
+      if (n === 0) limite43 = (RT - (17197 + pensionParaLimite + desemParaLimite)) * 0.43;
+      else if (n === 1) limite43 = (RT - (18130 + pensionParaLimite + desemParaLimite)) * 0.43;
+      else limite43 = (RT - (19262 + pensionParaLimite + desemParaLimite)) * 0.43;
+    } else {
+      if (n === 0) limite43 = (RT - (15876 + pensionParaLimite + desemParaLimite)) * 0.43;
+      else if (n === 1) limite43 = (RT - (16342 + pensionParaLimite + desemParaLimite)) * 0.43;
+      else limite43 = (RT - (16867 + pensionParaLimite + desemParaLimite)) * 0.43;
+    }
+    if (limite43 !== null && cuotaFinal > limite43) {
+      cuotaFinal = Math.max(0, roundAEAT(limite43));
+      motivoExencion = 'Cuota limitada por la regla del 43% del exceso sobre el límite excluyente.';
+    }
+  }
+
+  // 11: Ceuta/Melilla se aplica DESPUÉS del límite del 43 %, no antes.
+  if (input.ceutaMelilla) {
+    cuotaFinal = roundAEAT(cuotaFinal * 0.40);
+  }
+
+  // 12: Tipo de retención — TRUNCADO a 2 decimales (nunca redondeado)
+  let tipoRetencion = RT > 0 ? truncateAEAT((cuotaFinal / RT) * 100) : 0;
+
+  // Reducción de 2 puntos por adquisición/rehabilitación de vivienda habitual
+  // con financiación ajena, cuando el contribuyente la ha comunicado al pagador
+  // y cumple el umbral legal de retribuciones.
+  const vivienda = irpfParams.viviendaHabitual ?? {};
+  if (input.viviendaHabitual && input.viviendaHabitual.pagosConFinanciacion && RT < (vivienda.umbralRetribucion ?? 0)) {
+    tipoRetencion = Math.max(0, truncateAEAT(tipoRetencion - (vivienda.reduccionPuntos ?? 2)));
+  }
+
+  // Tipos mínimos: 2 % para contratos/relaciones de duración inferior al año
+  // y 15 % para relaciones laborales especiales, con las excepciones legales.
+  if (input.duracionContratoInferiorAno && !(input.ceutaMelilla && input.discapacidadContribuyente)) {
+    const minimoContrato = input.ceutaMelilla ? 0.8 : 2;
+    tipoRetencion = Math.max(tipoRetencion, minimoContrato);
+  }
+  if (input.relacionLaboralEspecial && !input.penadoInstitucionPenitenciaria && !input.discapacidadContribuyente) {
+    const minimoEspecial = input.ceutaMelilla ? 6 : 15;
+    tipoRetencion = Math.max(tipoRetencion, minimoEspecial);
+  }
+
+  const tipoMaximo = irpfParams.tipoMaximo * 100;
+  if (tipoRetencion > tipoMaximo) tipoRetencion = tipoMaximo;
+  if (tipoRetencion < 0) tipoRetencion = 0;
+
+  // 13: Importe anual de retención = RT x tipo truncado (magnitud final REDONDEAR1)
+  const irpfAnual = roundAEAT(RT * (tipoRetencion / 100));
+
+  return {
+    retribucionAnual: RT,
+    gastosSS,
+    otrosGastosDeducibles,
+    rendimientoNetoTrabajo: RNT,
+    reduccionTrabajo,
+    reduccionesEspeciales: especiales,
+    rendimientoNetoReducido: RNRT,
+    pensionCompensatoria,
+    anualidadesPorAlimentos: anualidadesAlimentos,
+    baseParaCalcularElTipo: baseParaTarifa,
+    minimoPersonalYFamiliar: {
+      total: MPF,
+      minimoPersonal: minPersonal,
+      minimoDiscapacidadContribuyente: minDiscapacidadContrib,
+      minimoDescendientes: minDescendientes,
+      minimoAscendientes: minAscendientes
+    },
+    cuotaAntesDeLimites: cuota,
+    umbralExclusion: umbral,
+    cuotaRetencion: cuotaFinal,
+    motivoAjuste: motivoExencion,
+    tipoRetencion,
+    viviendaHabitual: input.viviendaHabitual ?? null,
+    irpfAnual,
+    irpfMensualBase: input.numPagas ? roundAEAT(irpfAnual / input.numPagas) : null
+  };
+}
+
+
+
+/**
+ * Reparte un importe anual entre el número de pagas, SIN alterar el tipo/
+ * importe anual ya calculado (sección 28: no cambiar el tipo anual por
+ * tener 12 o 14 pagas).
+ *
+ * - 12 pagas: bruto mensual = bruto anual / 12 (pagas extra prorrateadas).
+ * - 14 pagas: bruto mensual ordinario = bruto anual / 14; las dos pagas
+ *   extraordinarias se pagan por el mismo importe (bruto anual / 14) en los
+ *   meses que corresponda, ya integradas en el total anual.
+ *
+ * La Seguridad Social SIEMPRE se calcula sobre la base mensual prorrateada
+ * (bruto anual / 12), igual en ambos esquemas de pago (ver socialSecurity.js).
+ * El IRPF se calcula sobre el importe ANUAL y después se reparte de forma
+ * proporcional entre las pagas efectivamente satisfechas.
+ */
+function repartirEnPagas({ brutoAnual, ssAnual, irpfAnual, numPagas }) {
+  const brutoPorPaga = roundAEAT(brutoAnual / numPagas);
+  const irpfPorPaga = roundAEAT(irpfAnual / numPagas);
+
+  // En 14 pagas, las cotizaciones del trabajador se soportan sobre la base
+  // mensual prorrateada y se descuentan en las 12 nóminas ordinarias; las
+  // pagas extra no llevan una cotización adicional separada.
+  const ssPorPaga = numPagas === 14
+    ? roundAEAT(ssAnual / 12)
+    : roundAEAT(ssAnual / numPagas);
+
+  const netoPorPaga = roundAEAT(brutoPorPaga - ssPorPaga - irpfPorPaga);
+  const netoPagaExtra = numPagas === 14
+    ? roundAEAT(brutoPorPaga - irpfPorPaga)
+    : netoPorPaga;
+
+  return {
+    numPagas,
+    brutoPorPaga,
+    ssPorPaga,
+    irpfPorPaga,
+    netoPorPaga,
+    netoPagaExtra,
+    // Vista "mensual" homogénea (12 meses), útil para comparar 12 vs 14 pagas.
+    brutoMensualEquivalente: roundAEAT(brutoAnual / 12),
+    ssMensualEquivalente: roundAEAT(ssAnual / 12),
+    irpfMensualEquivalente: roundAEAT(irpfAnual / 12),
+    netoMensualEquivalente: roundAEAT((brutoAnual - ssAnual - irpfAnual) / 12)
+  };
+}
+
+
+
+
+
+
+/**
+ * Función pura principal: combina Seguridad Social + IRPF + reparto de
+ * pagas para producir el resultado completo y trazable.
+ *
+ * @param {object} input - ver README "Contrato de entrada" para el detalle
+ *   de todos los campos aceptados.
+ * @param {object} datosNormativos - { ss, irpf } (contenido de los JSON en /data/2026)
+ */
+function calculateNetSalary(input, datosNormativos) {
+  const { ss: ssParams, irpf: irpfParams } = datosNormativos;
+
+  const seguridadSocial = calculateSocialSecurity(
+    {
+      brutoAnual: input.brutoAnual,
+      jornada: input.jornada,
+      grupoCotizacion: input.grupoCotizacion,
+      horasMensuales: input.horasMensuales,
+      tipoContrato: input.tipoContrato
+    },
+    ssParams
+  );
+
+  const irpf = calculateIrpf(
+    {
+      retribucionAnual: input.brutoAnual,
+      anoNacimiento: input.anoNacimiento,
+      situacionFamiliar: input.situacionFamiliar,
+      descendientes: input.descendientes,
+      ascendientes: input.ascendientes,
+      discapacidadContribuyente: input.discapacidadContribuyente,
+      movilidadReducidaContribuyente: input.movilidadReducidaContribuyente,
+      ceutaMelilla: input.ceutaMelilla,
+      movilidadGeografica: input.movilidadGeografica,
+      pensionCompensatoria: input.pensionCompensatoria,
+      anualidadesPorAlimentos: input.anualidadesPorAlimentos,
+      situacionLaboral: input.situacionLaboral,
+      numPagas: input.numPagas,
+      conyugeRentasAnuales: input.conyugeRentasAnuales,
+      viviendaHabitual: input.viviendaHabitual,
+      duracionContratoInferiorAno: input.duracionContratoInferiorAno,
+      relacionLaboralEspecial: input.relacionLaboralEspecial,
+      penadoInstitucionPenitenciaria: input.penadoInstitucionPenitenciaria
+    },
+    seguridadSocial.totalAnual,
+    irpfParams
+  );
+
+  const pagas = repartirEnPagas({
+    brutoAnual: input.brutoAnual,
+    ssAnual: seguridadSocial.totalAnual,
+    irpfAnual: irpf.irpfAnual,
+    numPagas: input.numPagas
+  });
+
+  const netoAnual = roundAEAT(input.brutoAnual - seguridadSocial.totalAnual - irpf.irpfAnual);
+
+  return {
+    avisoTerritorial: input.comunidadForal
+      ? 'El cálculo de Seguridad Social puede realizarse, pero la retención de IRPF está sometida a normativa foral (País Vasco / Navarra). Este cálculo de IRPF no es aplicable como resultado exacto.'
+      : null,
+    resumen: {
+      brutoAnual: input.brutoAnual,
+      brutoMensual: pagas.brutoMensualEquivalente,
+      numPagas: input.numPagas,
+      baseCotizacion: seguridadSocial.baseCotizacionMensual,
+      seguridadSocialMensual: seguridadSocial.totalMensual,
+      seguridadSocialAnual: seguridadSocial.totalAnual,
+      irpfMensual: pagas.irpfMensualEquivalente,
+      irpfAnual: irpf.irpfAnual,
+      tipoIrpf: irpf.tipoRetencion,
+      netoMensual: pagas.netoMensualEquivalente,
+      netoAnual,
+      netoPorPaga: pagas.netoPorPaga,
+      brutoPorPaga: pagas.brutoPorPaga
+    },
+    seguridadSocial,
+    irpf,
+    pagas,
+    avisoLegal: 'Estimación de retención en nómina conforme al algoritmo de la AEAT para 2026. El resultado de esta calculadora no sustituye una nómina emitida por la empresa ni determina el resultado final de la declaración anual de IRPF.'
+  };
+}
+
+
+
+
+const datosNormativos = { ss: ssParams, irpf: irpfParams };
+
+const state = {
+  step: 1,
+  data: {
+    brutoAnual: 30000,
+    numPagas: 14,
+    jornada: 'completa',
+    horasMensuales: null,
+    grupoCotizacion: 1,
+    tipoContrato: 'indefinido',
+    situacionLaboral: 'activo',
+    anoNacimiento: 1990,
+    situacionFamiliar: 1,
+    conyugeNif: '',
+    conyugeRentasAnuales: 0,
+    descendientes: [],
+    ascendientes: [],
+    discapacidadContribuyente: null,
+    movilidadReducidaContribuyente: false,
+    movilidadGeografica: false,
+    ceutaMelilla: false,
+    pensionCompensatoria: 0,
+    anualidadesPorAlimentos: 0,
+    comunidadForal: false,
+    viviendaHabitual: { pagosConFinanciacion: false },
+    duracionContratoInferiorAno: false,
+    relacionLaboralEspecial: false,
+    penadoInstitucionPenitenciaria: false
+  }
+};
+
+const TOTAL_STEPS = 7;
+const root = document.getElementById('app');
+
+function fmtEUR(n) {
+  return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(n);
+}
+function fmtPct(n) {
+  return new Intl.NumberFormat('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' %';
+}
+
+function render() {
+  root.innerHTML = '';
+  root.appendChild(renderProgress());
+  const stepEl = document.createElement('div');
+  stepEl.className = 'step-panel';
+  stepEl.appendChild(renderStep());
+  root.appendChild(stepEl);
+  root.appendChild(renderNav());
+}
+
+function renderProgress() {
+  const wrap = document.createElement('div');
+  wrap.className = 'progress';
+  for (let i = 1; i <= TOTAL_STEPS; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === state.step ? ' active' : '') + (i < state.step ? ' done' : '');
+    wrap.appendChild(dot);
+  }
+  return wrap;
+}
+
+function stepTitles() {
+  return {
+    1: 'Salario',
+    2: 'Situación laboral',
+    3: 'Situación familiar',
+    4: 'Hijos y ascendientes',
+    5: 'Discapacidad',
+    6: 'Situaciones especiales',
+    7: 'Resultado'
+  };
+}
+
+function field(labelText, inputEl) {
+  const wrap = document.createElement('label');
+  wrap.className = 'field';
+  const span = document.createElement('span');
+  span.textContent = labelText;
+  wrap.appendChild(span);
+  wrap.appendChild(inputEl);
+  return wrap;
+}
+
+function numberInput(value, onChange, opts = {}) {
+  const input = document.createElement('input');
+  input.type = 'number';
+  input.value = value ?? '';
+  input.step = opts.step ?? 'any';
+  if (opts.min !== undefined) input.min = opts.min;
+  input.addEventListener('input', (e) => onChange(e.target.value === '' ? null : Number(e.target.value)));
+  return input;
+}
+
+function selectInput(value, options, onChange) {
+  const select = document.createElement('select');
+  for (const [val, label] of options) {
+    const opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = label;
+    if (String(val) === String(value)) opt.selected = true;
+    select.appendChild(opt);
+  }
+  select.addEventListener('change', (e) => onChange(e.target.value));
+  return select;
+}
+
+function checkboxInput(checked, onChange, labelText) {
+  const wrap = document.createElement('label');
+  wrap.className = 'checkbox';
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.checked = !!checked;
+  input.addEventListener('change', (e) => onChange(e.target.checked));
+  wrap.appendChild(input);
+  const span = document.createElement('span');
+  span.textContent = labelText;
+  wrap.appendChild(span);
+  return wrap;
+}
+
+function h(tag, text) {
+  const el = document.createElement(tag);
+  if (text) el.textContent = text;
+  return el;
+}
+
+function renderStep() {
+  const container = document.createElement('div');
+  const titles = stepTitles();
+  const eyebrow = h('div', `Paso ${state.step} de ${TOTAL_STEPS}`);
+  eyebrow.className = 'eyebrow';
+  const title = h('h2', titles[state.step]);
+  container.appendChild(eyebrow);
+  container.appendChild(title);
+
+  const d = state.data;
+
+  if (state.step === 1) {
+    container.appendChild(field('Salario bruto anual (€)', numberInput(d.brutoAnual, v => d.brutoAnual = v, { min: 0 })));
+    container.appendChild(field('Número de pagas', selectInput(d.numPagas, [[12, '12 pagas'], [14, '14 pagas']], v => d.numPagas = Number(v))));
+    const smiNote = h('p', `Referencia: el SMI 2026 es ${fmtEUR(smiParams.params.smiAnual14Pagas.value)}/año (14 pagas).`);
+    smiNote.className = 'hint';
+    container.appendChild(smiNote);
+  }
+
+  if (state.step === 2) {
+    container.appendChild(field('Situación laboral', selectInput(d.situacionLaboral, [
+      ['activo', 'Trabajador activo'], ['pensionista', 'Pensionista'], ['desempleado', 'Desempleado']
+    ], v => d.situacionLaboral = v)));
+    container.appendChild(field('Tipo de contrato', selectInput(d.tipoContrato, [
+      ['indefinido', 'Indefinido'], ['temporal', 'Temporal']
+    ], v => d.tipoContrato = v)));
+    container.appendChild(field('Grupo de cotización', selectInput(d.grupoCotizacion, [
+      [1, '1 — Ingenieros, licenciados, dirección'],
+      [2, '2 — Ingenieros técnicos, peritos, ayudantes titulados'],
+      [3, '3 — Jefes administrativos y de taller'],
+      [4, '4 — Ayudantes no titulados'],
+      [5, '5 — Oficiales administrativos'],
+      [6, '6 — Subalternos'],
+      [7, '7 — Auxiliares administrativos'],
+      [8, '8 — Oficiales de primera y segunda'],
+      [9, '9 — Oficiales de tercera y especialistas'],
+      [10, '10 — Peones'],
+      [11, '11 — Trabajadores menores de 18 años']
+    ], v => d.grupoCotizacion = Number(v))));
+    container.appendChild(field('Jornada', selectInput(d.jornada, [
+      ['completa', 'Completa'], ['parcial', 'Parcial']
+    ], v => { d.jornada = v; render(); })));
+    if (d.jornada === 'parcial') {
+      container.appendChild(field('Horas trabajadas al mes', numberInput(d.horasMensuales, v => d.horasMensuales = v, { min: 0 })));
+    }
+    if (d.situacionLaboral === 'activo') {
+      container.appendChild(checkboxInput(d.movilidadGeografica, v => d.movilidadGeografica = v, 'Traslado de puesto de trabajo a otro municipio (movilidad geográfica)'));
+    }
+  }
+
+  if (state.step === 3) {
+    container.appendChild(field('Año de nacimiento', numberInput(d.anoNacimiento, v => d.anoNacimiento = v, { min: 1900 })));
+    container.appendChild(field('Situación familiar', selectInput(d.situacionFamiliar, [
+      [1, 'Soltero/a, viudo/a, divorciado/a o casado/a con cónyuge con rentas'],
+      [2, 'Casado/a — cónyuge sin rentas o con rentas ≤ 1.500 €/año'],
+      [3, 'Otras situaciones']
+    ], v => { d.situacionFamiliar = Number(v); render(); })));
+    if (Number(d.situacionFamiliar) === 2) {
+      container.appendChild(field('Rentas anuales del cónyuge (€)', numberInput(d.conyugeRentasAnuales, v => d.conyugeRentasAnuales = v ?? 0, { min: 0 })));
+      const hint = h('p', 'La situación 2 solo procede si el cónyuge no obtiene rentas anuales superiores a 1.500 €.');
+      hint.className = 'hint';
+      container.appendChild(hint);
+      if ((d.conyugeRentasAnuales ?? 0) > 1500) {
+        const warn = h('p', 'Con más de 1.500 € de rentas anuales del cónyuge, la situación familiar 2 no es aplicable. Selecciona la situación 1 o 3.');
+        warn.className = 'warning';
+        container.appendChild(warn);
+      }
+    }
+    container.appendChild(field('Pensión compensatoria al cónyuge (€/año, si aplica)', numberInput(d.pensionCompensatoria, v => d.pensionCompensatoria = v ?? 0, { min: 0 })));
+    container.appendChild(field('Anualidades por alimentos a favor de los hijos (€/año, si aplica)', numberInput(d.anualidadesPorAlimentos, v => d.anualidadesPorAlimentos = v ?? 0, { min: 0 })));
+  }
+
+  if (state.step === 4) {
+    const tieneHijos = checkboxInput(d.descendientes.length > 0, v => {
+      d.descendientes = v ? [{ anoNacimiento: 2015, computo: 'entero', discapacidad: null, movilidadReducida: false, rentasAnuales: 0, declaraIRPFMas1800: false }] : [];
+      render();
+    }, '¿Tiene descendientes a su cargo?');
+    container.appendChild(tieneHijos);
+
+    d.descendientes.forEach((desc, idx) => {
+      const box = document.createElement('div');
+      box.className = 'subbox';
+      box.appendChild(h('h4', `Descendiente ${idx + 1}`));
+      box.appendChild(field('Año de nacimiento', numberInput(desc.anoNacimiento, v => desc.anoNacimiento = v, { min: 1990 })));
+      box.appendChild(field('Cómputo', selectInput(desc.computo, [['entero', 'Entero (100%)'], ['mitad', 'Mitad (50%, guarda compartida)']], v => desc.computo = v)));
+      box.appendChild(field('Discapacidad', selectInput(desc.discapacidad ?? 'no', [['no', 'Sin discapacidad'], ['33-65', '33% - 64%'], ['65+', '≥ 65%']], v => desc.discapacidad = v === 'no' ? null : v)));
+      box.appendChild(field('Rentas anuales del descendiente (€)', numberInput(desc.rentasAnuales, v => desc.rentasAnuales = v ?? 0, { min: 0 })));
+      box.appendChild(checkboxInput(desc.declaraIRPFMas1800, v => desc.declaraIRPFMas1800 = v, 'Presenta declaración de IRPF con rentas superiores a 1.800 €'));
+      const removeBtn = h('button', 'Eliminar descendiente');
+      removeBtn.type = 'button';
+      removeBtn.className = 'link-btn';
+      removeBtn.addEventListener('click', () => { d.descendientes.splice(idx, 1); render(); });
+      box.appendChild(removeBtn);
+      container.appendChild(box);
+    });
+    if (d.descendientes.length > 0) {
+      const addBtn = h('button', '+ Añadir otro descendiente');
+      addBtn.type = 'button';
+      addBtn.className = 'link-btn';
+      addBtn.addEventListener('click', () => { d.descendientes.push({ anoNacimiento: 2018, computo: 'entero', discapacidad: null, movilidadReducida: false, rentasAnuales: 0, declaraIRPFMas1800: false }); render(); });
+      container.appendChild(addBtn);
+    }
+
+    const tieneAscendientes = checkboxInput(d.ascendientes.length > 0, v => {
+      d.ascendientes = v ? [{ edad: 70, conviven: true, discapacidad: null, movilidadReducida: false, personasConDerecho: 1 }] : [];
+      render();
+    }, '¿Tiene ascendientes a su cargo (mayores de 65 años que convivan con usted)?');
+    container.appendChild(tieneAscendientes);
+
+    d.ascendientes.forEach((asc, idx) => {
+      const box = document.createElement('div');
+      box.className = 'subbox';
+      box.appendChild(h('h4', `Ascendiente ${idx + 1}`));
+      box.appendChild(field('Edad', numberInput(asc.edad, v => asc.edad = v, { min: 65 })));
+      box.appendChild(field('Discapacidad', selectInput(asc.discapacidad ?? 'no', [['no', 'Sin discapacidad'], ['33-65', '33% - 64%'], ['65+', '≥ 65%']], v => asc.discapacidad = v === 'no' ? null : v)));
+      const removeBtn = h('button', 'Eliminar ascendiente');
+      removeBtn.type = 'button';
+      removeBtn.className = 'link-btn';
+      removeBtn.addEventListener('click', () => { d.ascendientes.splice(idx, 1); render(); });
+      box.appendChild(removeBtn);
+      container.appendChild(box);
+    });
+  }
+
+  if (state.step === 5) {
+    container.appendChild(checkboxInput(!!d.discapacidadContribuyente, v => { d.discapacidadContribuyente = v ? '33-65' : null; render(); }, '¿Tiene usted alguna discapacidad reconocida?'));
+    if (d.discapacidadContribuyente) {
+      container.appendChild(field('Grado de discapacidad', selectInput(d.discapacidadContribuyente, [['33-65', '33% - 64%'], ['65+', '≥ 65%']], v => d.discapacidadContribuyente = v)));
+      container.appendChild(checkboxInput(d.movilidadReducidaContribuyente, v => d.movilidadReducidaContribuyente = v, 'Movilidad reducida o necesidad de ayuda de terceras personas'));
+    }
+  }
+
+  if (state.step === 6) {
+    container.appendChild(checkboxInput(d.viviendaHabitual.pagosConFinanciacion, v => { d.viviendaHabitual.pagosConFinanciacion = v; render(); }, 'Pago un préstamo para adquirir o rehabilitar mi vivienda habitual con financiación ajena'));
+    if (d.viviendaHabitual.pagosConFinanciacion) {
+      const hint = h('p', 'Si procede, el tipo de retención puede reducirse en 2 puntos cuando la retribución anual es inferior a 33.007,20 €.');
+      hint.className = 'hint';
+      container.appendChild(hint);
+    }
+    container.appendChild(checkboxInput(d.duracionContratoInferiorAno, v => d.duracionContratoInferiorAno = v, 'Contrato o relación laboral de duración inferior a un año'));
+    container.appendChild(checkboxInput(d.relacionLaboralEspecial, v => d.relacionLaboralEspecial = v, 'Relación laboral especial sujeta al tipo mínimo específico'));
+    if (d.relacionLaboralEspecial) container.appendChild(checkboxInput(d.penadoInstitucionPenitenciaria, v => d.penadoInstitucionPenitenciaria = v, 'Penado en institución penitenciaria'));
+    container.appendChild(checkboxInput(d.ceutaMelilla, v => d.ceutaMelilla = v, 'Residencia habitual y efectiva en Ceuta o Melilla'));
+    container.appendChild(checkboxInput(d.comunidadForal, v => d.comunidadForal = v, 'Tributa en País Vasco o Navarra (régimen foral)'));
+    if (d.comunidadForal) {
+      const warn = h('p', 'El cálculo estatal de IRPF no resulta aplicable como cálculo exacto a estos territorios debido a su normativa foral. Podemos calcular su Seguridad Social, pero el IRPF se mostrará solo como orientativo.');
+      warn.className = 'warning';
+      container.appendChild(warn);
+    }
+  }
+
+  if (state.step === 7) {
+    container.appendChild(renderResultado());
+  }
+
+  return container;
+}
+
+function renderResultado() {
+  const input = { ...state.data };
+  let resultado;
+  try {
+    resultado = calculateNetSalary(input, datosNormativos);
+  } catch (err) {
+    const errBox = document.createElement('div');
+    errBox.className = 'warning';
+    errBox.textContent = 'No se ha podido calcular: ' + err.message;
+    return errBox;
+  }
+
+  const wrap = document.createElement('div');
+
+  const card = document.createElement('div');
+  card.className = 'result-card';
+  const is14 = Number(resultado.resumen.numPagas) === 14;
+  const label = h('div', is14 ? 'NETO POR PAGA ORDINARIA' : 'NETO MENSUAL');
+  label.className = 'result-label';
+  const value = h('div', fmtEUR(is14 ? resultado.pagas.netoPorPaga : resultado.resumen.netoMensual));
+  value.className = 'result-value';
+  card.appendChild(label);
+  card.appendChild(value);
+
+  const rows = is14
+    ? [
+        ['Bruto por paga', resultado.pagas.brutoPorPaga, 'pos'],
+        ['Seguridad Social (paga ordinaria)', -resultado.pagas.ssPorPaga, 'neg'],
+        ['IRPF por paga', -resultado.pagas.irpfPorPaga, 'neg'],
+        ['Neto paga extra', resultado.pagas.netoPagaExtra, 'pos']
+      ]
+    : [
+        ['Bruto mensual', resultado.resumen.brutoMensual, 'pos'],
+        ['Seguridad Social', -resultado.resumen.seguridadSocialMensual, 'neg'],
+        ['IRPF', -resultado.resumen.irpfMensual, 'neg']
+      ];
+  const table = document.createElement('div');
+  table.className = 'mini-table';
+  rows.forEach(([l, v]) => {
+    const row = document.createElement('div');
+    row.className = 'mini-row';
+    row.innerHTML = `<span>${l}</span><span class="tabular">${v < 0 ? '-' : ''}${fmtEUR(Math.abs(v))}</span>`;
+    table.appendChild(row);
+  });
+  const total = document.createElement('div');
+  total.className = 'mini-row total';
+  total.innerHTML = is14
+    ? `<span>PROMEDIO MENSUAL ANUAL</span><span class="tabular">${fmtEUR(resultado.resumen.netoMensual)}</span>`
+    : `<span>NETO</span><span class="tabular">${fmtEUR(resultado.resumen.netoMensual)}</span>`;
+  table.appendChild(total);
+  card.appendChild(table);
+  if (is14) {
+    const note14 = h('p', 'En 14 pagas, las 2 pagas extraordinarias se muestran por separado. El promedio mensual anual sirve para comparar el neto anual entre 12 y 14 pagas.');
+    note14.className = 'hint';
+    wrap.appendChild(card);
+    wrap.appendChild(note14);
+  } else {
+    wrap.appendChild(card);
+  }
+
+  if (resultado.avisoTerritorial) {
+    const w = h('p', resultado.avisoTerritorial);
+    w.className = 'warning';
+    wrap.appendChild(w);
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'summary-grid';
+  const summaryItems = [
+    ['Bruto anual', fmtEUR(resultado.resumen.brutoAnual)],
+    ['SS anual', fmtEUR(resultado.resumen.seguridadSocialAnual)],
+    ['IRPF anual', fmtEUR(resultado.resumen.irpfAnual)],
+    ['Neto anual', fmtEUR(resultado.resumen.netoAnual)],
+    ['Tipo IRPF', fmtPct(resultado.resumen.tipoIrpf)],
+    ['Base de cotización', fmtEUR(resultado.resumen.baseCotizacion)]
+  ];
+  summaryItems.forEach(([l, v]) => {
+    const item = document.createElement('div');
+    item.className = 'summary-item';
+    item.innerHTML = `<span class="summary-label">${l}</span><span class="summary-value tabular">${v}</span>`;
+    grid.appendChild(item);
+  });
+  wrap.appendChild(grid);
+
+  const detailBtn = h('button', 'Ver cálculo detallado');
+  detailBtn.type = 'button';
+  detailBtn.className = 'link-btn';
+  const detailBox = document.createElement('div');
+  detailBox.className = 'detail-box hidden';
+  detailBtn.addEventListener('click', () => detailBox.classList.toggle('hidden'));
+
+  detailBox.appendChild(h('h4', 'Desglose de Seguridad Social'));
+  const ssRows = [
+    ['Contingencias comunes', resultado.seguridadSocial.desglose.contingenciasComunes],
+    ['MEI', resultado.seguridadSocial.desglose.mei],
+    [`Desempleo (${resultado.seguridadSocial.desglose.desempleo.tipoContrato})`, resultado.seguridadSocial.desglose.desempleo.importe],
+    ['Formación profesional', resultado.seguridadSocial.desglose.formacionProfesional]
+  ];
+  if (resultado.seguridadSocial.desglose.solidaridad.aplica) {
+    ssRows.push(['Cotización adicional de solidaridad', resultado.seguridadSocial.desglose.solidaridad.totalTrabajador]);
+  }
+  ssRows.push(['TOTAL SS TRABAJADOR (mensual)', resultado.seguridadSocial.totalMensual]);
+  detailBox.appendChild(buildDetailTable(ssRows));
+
+  detailBox.appendChild(h('h4', 'Desglose de IRPF (anual)'));
+  const irpfRows = [
+    ['Retribución anual', resultado.irpf.retribucionAnual],
+    ['− Cotizaciones SS', -resultado.irpf.gastosSS],
+    ['− Gastos deducibles', -resultado.irpf.otrosGastosDeducibles],
+    ['= Rendimiento neto del trabajo', resultado.irpf.rendimientoNetoTrabajo],
+    ['− Reducción por rendimientos del trabajo', -resultado.irpf.reduccionTrabajo],
+    ['− Reducciones especiales', -resultado.irpf.reduccionesEspeciales.total],
+    ['= Rendimiento neto reducido', resultado.irpf.rendimientoNetoReducido],
+    ['Base para calcular el tipo', resultado.irpf.baseParaCalcularElTipo],
+    ['Mínimo personal y familiar', resultado.irpf.minimoPersonalYFamiliar.total],
+    ['Cuota de retención', resultado.irpf.cuotaRetencion],
+    ['Tipo de retención (truncado)', resultado.irpf.tipoRetencion + ' %'],
+    ['Importe anual retenido', resultado.irpf.irpfAnual]
+  ];
+  detailBox.appendChild(buildDetailTable(irpfRows));
+
+  const legal = h('p', resultado.avisoLegal);
+  legal.className = 'legal-note';
+  detailBox.appendChild(legal);
+  const legal2 = h('p', 'El porcentaje de IRPF calculado corresponde a la retención aplicable en nómina según el algoritmo estatal de la AEAT. La declaración anual de la renta puede producir un resultado diferente.');
+  legal2.className = 'legal-note';
+  detailBox.appendChild(legal2);
+
+  wrap.appendChild(detailBtn);
+  wrap.appendChild(detailBox);
+
+  return wrap;
+}
+
+function buildDetailTable(rows) {
+  const table = document.createElement('div');
+  table.className = 'mini-table detail';
+  rows.forEach(([l, v]) => {
+    const row = document.createElement('div');
+    row.className = 'mini-row';
+    const valStr = typeof v === 'number' ? (v < 0 ? '-' + fmtEUR(Math.abs(v)) : fmtEUR(v)) : v;
+    row.innerHTML = `<span>${l}</span><span class="tabular">${valStr}</span>`;
+    table.appendChild(row);
+  });
+  return table;
+}
+
+function renderNav() {
+  const nav = document.createElement('div');
+  nav.className = 'nav';
+  if (state.step > 1) {
+    const back = h('button', '← Atrás');
+    back.type = 'button';
+    back.className = 'btn secondary';
+    back.addEventListener('click', () => { state.step -= 1; render(); });
+    nav.appendChild(back);
+  } else {
+    nav.appendChild(document.createElement('span'));
+  }
+  if (state.step < TOTAL_STEPS) {
+    const next = h('button', state.step === TOTAL_STEPS - 1 ? 'Ver resultado →' : 'Continuar →');
+    next.type = 'button';
+    next.className = 'btn primary';
+    next.addEventListener('click', () => { state.step += 1; render(); });
+    nav.appendChild(next);
+  } else {
+    const restart = h('button', 'Empezar de nuevo');
+    restart.type = 'button';
+    restart.className = 'btn secondary';
+    restart.addEventListener('click', () => { state.step = 1; render(); });
+    nav.appendChild(restart);
+  }
+  return nav;
+}
+
+render();
+
+</script>
+</body>
+</html>
